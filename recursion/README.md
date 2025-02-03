@@ -76,4 +76,77 @@
         pow(m,n)=pow(m,n-1)*m; when n>0 and 1 when n=0
 ```
 
-* 
+* In recursion for n times, it makes n+1 calls and has n+1 activation record. It consumes more space in stack
+
+* Reducing the no.of computation:
+```
+        2^8 can be written as (2^2)4 = (2*2)^4 //since it is odd directly doing it
+        2^9=2*(2^2)^4 //since the number is odd taking one 2 out and doing the computation
+```
+
+* In Taylor series 3 values are involved: sum, power and factorial
+```
+e^x = 1+x^1/1 + x^2/2! + x^3/3! + ------ + n;
+sum(n)= sum(n-1)+n;
+fact(n)= fact(n-1)*n;
+pow(m,n)= pow(m,n-1)*m;
+```
+
+* Addition is done at the returning time. Same in factorial and power
+
+* When we have to return multiple values in recursion then we have to use static values
+
+* Total multiplication required for n terms in Taylor series evaluation is n(n+1). o(n2) multiplication is required
+
+* If take common and do the operation for n terms it requires n multiplication = o(n)
+
+* fib(n-2)+fin(n-1) can be written as 2 fib(n-1). When a function is called 2 times with a reduced value, then the time taken is approx o(2^n)
+
+* In Fibonacci series, recursive function is called multiple times for the same value, such a recursive function is called as excessive recursion
+
+* To avoid excessive calls to avoid multiple function call, we have to make use of array i.e., storing the result of function so that it can be used later. This approach memoization
+
+* nCr = n!/r!(n-r)! Where, r can take the value from 0-5. nCr is basically different ways of arranging values from large set of values
+
+* From Pascal's triangle we can find out the values of nCr
+
+* Tower of Hanoi: 2 conditions
+                1. Moving one disk at a time 
+                2. Smaller disk should not be kept over a larger disk
+
+* TOH: Moving 3 disks from A to C using auxillary B
+                1. Move disk 1 from A to C
+                2. Move disk 2 from A to B
+                3.Move disk 1 from C to B
+                4. Move disk 3 from A to C using B
+                5. Move disk 1 from B to A
+                6. Move disk 2 from B to C
+                7. Move disk 1 from A to C
+Hence, C has disk 1,2,3 arranged from large to small( from bottom to top) by moving only one disk at a time
+
+```
+TOH(3, A,B,C)
+1. TOH(2,A,C,B)
+
+2.Move disk from A to C using B
+3. TOH(2,B,A,C)
+
+Therefore, for n disks
+1. TOH(n-1,A,C,B)
+
+2.Move disk from A to C using B
+3. TOH(n-1,B,A,C)
+```
+
+* For 3 disks, it is making 15 calls. 1+2+2^2+2^3=2^4-1(2^n+1-1). For n=2, 7 calls. Time taken= o(2^n)
+
+* If the variable is static, declaration will be called once and need to consider it during recursion call again and again
+
+* Since this function is call by value, changing sum val in foo, doesn't change main function value. So sum will remain 0
+
+* If it is call by reference, don't write the 5, write x only. Because x is referring to 5 here
+
+* If the variables are local, in every call x value will be assigned with same value which was assigned to it before
+
+* If there are many function calls, don't go for tree expansion. That would be complex. Make table and solve one by one and combine the result
+
