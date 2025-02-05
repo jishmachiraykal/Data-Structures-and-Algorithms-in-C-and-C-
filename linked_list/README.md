@@ -97,5 +97,11 @@ Checking if p is a last node or are there any nodes after p: if(p->next == NULL)
         Ex: Going to forward to multiple pages in a website and coming back
 
 * Doubly linked list insertion: 
-        1. Before first node 
-        2. At any given node
+        1. Before first node: time taken is o(1)
+        2. At any given node: time complexity min is o(1) and max is o(n)
+
+* Doubly linked list deletion: 
+        1. Delete first node: time taken is o(1)
+        2. Delete from given node: time complexity min is o(1) and max is o(n)
+
+* Reversing doubly linked list: Traverse through the list and swap it. All previous nodes will be reversed one by one and all next nodes are reversed one by one

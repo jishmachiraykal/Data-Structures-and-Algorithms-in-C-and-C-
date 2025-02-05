@@ -51,12 +51,96 @@ void display(struct node *p){
     printf("\n");
 }
 
+void insert(struct node *p, int index, int x){
+    struct node *t;
+    int i;
+    
+    if(index<0 || index>count(p)){
+        return;
+    }
+    
+    if(index==0){ // inserting at position 0
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=x;
+        t->previous=NULL;
+        t->next=first;
+        first->previous=t;
+        first=t;
+    }else{
+        for(i=0;i<index-1;i++){
+            p=p->next;
+        }
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=x;
+        t->previous=p;
+        t->next=p->next;
+        if(p->next){ //checking if p->next node is present and not null.Making sure we are not inserting after the last node 
+            p->next->previous=t;
+        }
+        p->next=t;
+    }
+}
+
+int delete_node(struct node *p, int index){
+    int x=-1,i;
+    
+    if(index<0 || index>count(p)){
+        return 0;
+    }
+    
+    if(index==1){ //deleting the first node
+        first=first->next;
+        if(first){ //checking if first is not null
+            first->previous=NULL;   
+        }
+        
+        x=p->data;
+        free(p);
+    }else{
+        for(i=0;i<index-1;i++){
+            p=p->next;
+        }
+        p->previous->next=p->next;
+        if(p->next){ //checking if p->next node is present and not null.Making sure we are not deleting after the last node 
+            p->next->previous=p->previous;
+        }
+        x=p->data;
+        free(p);
+    }
+    return x;
+}
+
+void reverse(struct node *p){
+    struct node *temp;
+    
+    while(p!=NULL){
+        temp=p->next;
+        p->next=p->previous;
+        p->previous=temp;
+        p=p->previous;
+        if(p!=NULL && p->next==NULL){ //checking if it is a last node
+            first=p; // if so pointer should be pointing on that
+        }
+    }
+}
+
 int main()
 {
     int A[]={12,34,56,77,98};
 
     create(A,5);
     printf("Count = %d\n", count(first));
+    display(first);
+
+    create(A,5);
+    insert(first,2,9);
+
+    create(A,5);
+    printf("Deleted data is %d\n",delete_node(first,4));
+    display(first);
+    
+    create(A,5);
+    reverse(first);
     display(first);
 
     return 0;
