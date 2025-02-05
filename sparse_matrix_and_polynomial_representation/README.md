@@ -16,3 +16,13 @@ These approach of storing elements will reduce the memory size and improves effi
 ```
 
 * If column and row numbers are matching, then only add the no. of that row and column in three column representation. If they are not matching, take the element which comes first
+
+* Polynomial is a collection of terms, in each term has a co-efficient (by default it is 1) + exponent of x. If no exponent means it is zero
+
+* To evaluate the polynomial, take exponent value raise x to the power of exponent and multiply with co-eff. And keep on adding like this
+
+* Common terms with same exponent will be added, if no common term, then all the terms will all the terms will be added individually. If are no common exp, then the term which is having greater exponent will be added first
+
+* When assigning a structure to another structure, all the elements will be copied. Need not to copy them individually
+
+
