@@ -105,3 +105,40 @@ Checking if p is a last node or are there any nodes after p: if(p->next == NULL)
         2. Delete from given node: time complexity min is o(1) and max is o(n)
 
 * Reversing doubly linked list: Traverse through the list and swap it. All previous nodes will be reversed one by one and all next nodes are reversed one by one
+
+* Last node in circular doubly linked list is head's previous node. Therefore, adding a new node before head node taken o(1) time.
+
+* If there is single node, then its next and previous should point on itself. Then it is doubly linked list. If there is no node, then the value=NULL
+
+* Comparision of linked list:
+        1. Linear linked list
+        2. Circular singly linked list
+        3. Doubly linked list
+        4. Circular doubly linked list
+Doubly LL take double the space of pointers required in singly LL because doubly LL needs 2 pointers(2n space), whereas singly LL requires one pointer(n space)
+
+Circular singly LL takes o(n) time before inserting before the first node and others take o(1). Inserting at any other position takes same time for LL
+
+Deleting the head node: In circular LL it take o(n) time and other LL takes o(1)
+
+Deleting at any other position: All LL takes min of o(1) and max of o(n) time
+
+* For queue, we can use singly LL. Doubly circular LL is the best but it takes more space as it consumes more pointer. In Java only doubly LL is available
+
+* Comparision between array and linked list: 
+        1. Arrays are created both in stack as well as in heap. LL are always created in heap
+        2. Arrays size is fixed and LL size is variable length
+        3. LL takes extra space in every node to stored link of the next node whereas arrays takes only space for data
+        4. Elements in arrays can be accessed randomly(e.r., A[6]) whereas LL data has to be access sequentially
+        5. Efficiency of inserting/deleting the elements in both arrays and LL is same(o(1) and o(n)) if the data is not an issue
+        6. Data movement is costly in arrays than LL because it shitfs the data in arrays
+        7. Binary search is not effient in LL whereas it is easily possible in arrays
+        8. Insertion/merge sore is more frieandly in linked list than arrays
+
+* Both array and LL are used as per the requirement
+
+* If we are finding the middle node for total of 6 node, then either 3rd/4th node is a middle node
+
+* Time taken for finding the middle node is o(1)
+
+* To traverse from back side of a linked list, stack will help. After traversing and storing the address in a LL, start from backwards and the point where addresses become different till that point is the intersecting point of a LL. Time taken is o(n)

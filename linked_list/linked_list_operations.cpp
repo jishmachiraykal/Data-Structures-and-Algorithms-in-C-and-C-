@@ -109,7 +109,7 @@ int Rmax(struct node *p){
 
 //linear search using linked list:
 struct node * LSearch(struct node *p, int key){ // linear search should return struct node as data type
-  l  struct node *q=NULL;
+    struct node *q=NULL;
     while(p!=0){
         if(key==p->data){
             q->next=p->next;
@@ -366,6 +366,21 @@ int isLoop(struct node *f){
     }
 }
 
+//finding the middle element of a linked list
+int findMiddle(struct node *p){
+    struct node *q;
+    p=q=first;
+    
+    while(q!=NULL){
+            q=q->next;
+        if(q){
+            q=q->next;
+            p=p->next;
+        }
+    }
+    return p->data;
+}
+
 int main()
 {
     struct node *temp,*rtemp,*t1,*t2;;
@@ -459,5 +474,10 @@ int main()
     t2->next=t1; // creating a loop
     printf("%d\n",isLoop(first));
     display(third);
+
+    create(A,5);
+    printf("Middle element is %d\n",findMiddle(first));
+    display(first);
+
     return 0;
 }
