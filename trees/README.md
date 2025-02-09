@@ -92,10 +92,12 @@ If the binary tree is represented in an array, it should not be having any blank
                 a. pre-order: draw a line below the tree, connect to that line from left and later add one by one from left to right
                 b. in-order:  draw a line below the tree, connect to that line from straight and later add one by one from left to right
                 c. post-order: draw a line below the tree, connect to that line from right and later add one by one from left to right
+
         2. Method two:
                 a. pre-order: on every node, put a mark on the left hand side go along the boundary and mark it out
                 b. in-order: draw a mark at the bottom of each node go along the boundaries, take elements and mark it out
                 c. post-order: on every node, put a mark on the right hand side go along the boundary and mark it out
+                
         3. Method three:
                 a. pre-order: start from root, take your fingers along the tree,by keeping finger at left side, take the element that is completely visible and mark it out
                 b. in-order:  start from root, take your fingers along the tree by keeping finger at the top, take the element that is completely visible and mark it out
