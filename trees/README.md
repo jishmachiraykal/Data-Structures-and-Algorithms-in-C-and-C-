@@ -59,3 +59,46 @@
 
 * Strict n-ary tree: every tree can have either 0 child or n children
         Ex: A 3-ary tree can have 0 child or 3 children
+
+* Height vs Nodes of strict n-ary tree if height is given:
+        1. Minimum nodes for the given height= n= mh+1 // m=3 for 3-ary tree and m-4 for 4-ary tree
+        2. Maximum nodes for the given height= n= (m^h+1-1)/(m-1)
+
+* Height vs Nodes of strict n-ary tree if nodes are given: height can vary from o(logn)-o(n)
+        1. Minimum height for the given node= h= logm[n(m-1)+1]-1
+        2. Maximum height for the given node= h= (n-1)/m
+
+* Internal vs External nodes of strict n-ary tree: e=(m-1)i+1  // m=3 for 3-ary tree and m-4 for 4-ary tree
+
+* Representation of binary tree: 1. array 2. linked list
+
+* Binary tree rep using arrays: Considering index starts from 1. All the nodes should be arranged in array by maintaining its relationship i.e., parent and child. Therefore if any element is at index i, then its left child will be at 2*i and right child will be at 2*i+1. And if we take any child its parent will be at i/2. If we are getting decimal result, take interger value only to know the parent location
+
+* Binary tree using LL: If there is no child, make it NULL. For n nodes, there will be n+1 binary trees
+
+Full vs complete binary tree: A binary tree of height h having max no.of nodes is called full binary tree. For h height, no.of nodes=(2^h+1-1)
+If the binary tree is represented in an array, it should not be having any blank spaces in between the elements. This type of binary tree is called complete binary tree. A full binary tree is always a complete binary tree but vice-versa need not to be true
+
+* Strict vs Complete binary tree: These two binary trees are also called as complete and almost complete binary trees respectively. Complete binary tree is more useful
+
+* Tree traversal: visiting all the nodes. For binary tree below traversals are possible:
+        1. Preorder: visit(node), preorder(left subtree) and preorder(right subtree)
+        2. Inorder: inorder(left subtree),visit(node) and inorder(right subtree)
+        3. Postorder: postorder(left subtree), postorder(right subtree) and visit(node)
+        4. Level order: level by level
+        For the bigger tree, break the tree and traverse through the tree
+* Binary tree travesal easy methods
+        1. Method one:
+                a. pre-order: draw a line below the tree, connect to that line from left and later add one by one from left to right
+                b. in-order:  draw a line below the tree, connect to that line from straight and later add one by one from left to right
+                c. post-order: draw a line below the tree, connect to that line from right and later add one by one from left to right
+        2. Method two:
+                a. pre-order: on every node, put a mark on the left hand side go along the boundary and mark it out
+                b. in-order: draw a mark at the bottom of each node go along the boundaries, take elements and mark it out
+                c. post-order: on every node, put a mark on the right hand side go along the boundary and mark it out
+        3. Method three:
+                a. pre-order: start from root, take your fingers along the tree,by keeping finger at left side, take the element that is completely visible and mark it out
+                b. in-order:  start from root, take your fingers along the tree by keeping finger at the top, take the element that is completely visible and mark it out
+                c. post-order:  start from root, take your fingers along the tree,by keeping finger at right side, take the element that is completely visible and mark it out
+
+* First element of pre-order and last element of post-order will always be same
