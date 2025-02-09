@@ -76,7 +76,7 @@
 
 * Binary tree using LL: If there is no child, make it NULL. For n nodes, there will be n+1 binary trees
 
-Full vs complete binary tree: A binary tree of height h having max no.of nodes is called full binary tree. For h height, no.of nodes=(2^h+1-1)
+* Full vs complete binary tree: A binary tree of height h having max no.of nodes is called full binary tree. For h height, no.of nodes=(2^h+1-1)
 If the binary tree is represented in an array, it should not be having any blank spaces in between the elements. This type of binary tree is called complete binary tree. A full binary tree is always a complete binary tree but vice-versa need not to be true
 
 * Strict vs Complete binary tree: These two binary trees are also called as complete and almost complete binary trees respectively. Complete binary tree is more useful
@@ -88,16 +88,17 @@ If the binary tree is represented in an array, it should not be having any blank
         4. Level order: level by level
         For the bigger tree, break the tree and traverse through the tree
 * Binary tree travesal easy methods
+
         1. Method one:
                 a. pre-order: draw a line below the tree, connect to that line from left and later add one by one from left to right
                 b. in-order:  draw a line below the tree, connect to that line from straight and later add one by one from left to right
                 c. post-order: draw a line below the tree, connect to that line from right and later add one by one from left to right
-
+                
         2. Method two:
                 a. pre-order: on every node, put a mark on the left hand side go along the boundary and mark it out
                 b. in-order: draw a mark at the bottom of each node go along the boundaries, take elements and mark it out
                 c. post-order: on every node, put a mark on the right hand side go along the boundary and mark it out
-                
+
         3. Method three:
                 a. pre-order: start from root, take your fingers along the tree,by keeping finger at left side, take the element that is completely visible and mark it out
                 b. in-order:  start from root, take your fingers along the tree by keeping finger at the top, take the element that is completely visible and mark it out
