@@ -31,3 +31,20 @@
 * Queue using LL: if(front==NULL), then queue is empty and node *t=new node if(t==NULL) i.e., t is NULL then queue is full 
 
 * When first node is created, both front and rear should point on the same node. When are new node is inserted rear should point on that node even if it is insertion is done at the last or in the beginning. This takes o(1)/conastant time and deleting node also takes constant/o(1) time
+
+* Doubly ended queue(DEQUEUE): It doesn't strictly follow FIFO.It can be implemented using array and LL. Insertion and deletion can be performed using both front and rear pointers. But this will not follow FIFO style.
+
+* Input restricted dequeue: Insertion is restricted for front pointers but deletion can be done using both
+
+* Output restricted dequeue: Deletion is restricted for rear pointer but insertion can be done using both
+
+* Priority queues: 
+        a. Priority Queue: Elements are inserted based on priorites in different queues. But while deleting elements should be deleted from highest priority queue ie., FIFO order is followed
+
+        b. Element itself is the priority. Smaller number higher priority. This can be changed. This follows FIFO
+            Ex: 6,8,10,7,8 // here 8,8 are having same priority i.e, duplication
+        Implementation can be done in 2 ways:
+            1. Insert the elements in what order they are and delete maximum priority by searching it. This takes o(n) time
+            2. Insert in increasing order of priority and delete last element of array. This takes constant/o(1) time
+
+* Queue using 2 stacks: Push the elements to stack1 from queue and to delete the element from bottom i.e, FIFO order pop out the elements from stack1 to push it to stack2. Now perform delete operation as per FIFO. If stack2 is empty, pop out and push the elements from stack1 and delete it    
