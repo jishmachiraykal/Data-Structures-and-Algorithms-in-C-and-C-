@@ -105,3 +105,7 @@ If the binary tree is represented in an array, it should not be having any blank
                 c. post-order:  start from root, take your fingers along the tree,by keeping finger at right side, take the element that is completely visible and mark it out
 
 * First element of pre-order and last element of post-order will always be same
+
+* With only pre-order/inorder/post-order, we cannot generate a unique tree. Pre-order+inorder and post-order+inorder gives a unique tree.
+
+* To generate tree from traversal using the above combination, take inorder all elements and from pre-order take the first element which will be root and for the remaining element split it to right or left in which position they are in and obtain the unique tree
