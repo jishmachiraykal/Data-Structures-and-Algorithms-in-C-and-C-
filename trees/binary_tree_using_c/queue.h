@@ -7,7 +7,6 @@ struct node{
     int data;
 };
 
-
 struct queue{
     int size;
     int front;

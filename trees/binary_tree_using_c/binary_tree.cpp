@@ -121,6 +121,86 @@ void levelOrder(struct node *root){
     }
 }
 
+int count(struct node *root){
+    if(root){
+        return count(root->lchild)+count(root->rchild)+1;
+    }else{
+        return 0;
+    }
+}
+
+int height(struct node *root){
+    int x=0,y=0;
+    if(root==NULL){
+        return 0;
+    }else{
+        x=height(root->lchild);
+        y=height(root->rchild);
+        if(x>y){
+        return x+1;
+        }else{
+            return y+1;
+        }
+    }
+}
+
+int countLeafNode(struct node *root){ // counts node with degree 0
+    int x=0,y=0;
+    if(root!=NULL){
+        x=height(root->lchild);
+        y=height(root->rchild);
+        if(root->lchild==NULL && root->rchild==NULL){
+        return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
+
+int countDeg2(struct node *root){ //counts node with degree 2 
+    int x=0,y=0;
+    if(root!=NULL){
+        x=height(root->lchild);
+        y=height(root->rchild);
+        if(root->lchild!=NULL && root->rchild!=NULL){
+        return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
+
+
+int countDeg1(struct node *root){ //counts node with degree 1 
+    int x=0,y=0;
+    if(root!=NULL){
+        x=height(root->lchild);
+        y=height(root->rchild);
+        if(root->lchild!=NULL ^ root->rchild!=NULL){ // exclusive OR condition
+        return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
+
+int countDeg21(struct node *root){ //counts node with degree 2 and 1
+    int x=0,y=0;
+    if(root!=NULL){
+        x=height(root->lchild);
+        y=height(root->rchild);
+        if(root->lchild!=NULL || root->rchild!=NULL){
+        return x+y+1;
+        }else{
+            return x+y;
+        }
+    }
+    return 0;
+}
+
 int main(){
     createTree();
     printf("\n Pre order: ");

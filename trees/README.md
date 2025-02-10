@@ -55,7 +55,7 @@
 * Internal vs External nodes of strict binary tree: e=i+1
 
 * n-ary trees: a tree with max n degree. It can be 0,1,2,3........n
-        Ex: If 3-ary tree having max og 2 children is acceptable. It should not be more than 3. In this case it is also a binary tree
+        Ex: If 3-ary tree having max of 2 children is acceptable. It should not be more than 3. In this case it is also a binary tree
 
 * Strict n-ary tree: every tree can have either 0 child or n children
         Ex: A 3-ary tree can have 0 child or 3 children
@@ -109,3 +109,5 @@ If the binary tree is represented in an array, it should not be having any blank
 * With only pre-order/inorder/post-order, we cannot generate a unique tree. Pre-order+inorder and post-order+inorder gives a unique tree.
 
 * To generate tree from traversal using the above combination, take inorder all elements and from pre-order take the first element which will be root and for the remaining element split it to right or left in which position they are in and obtain the unique tree
+
+* Various processing of binary trees is done using post-order
