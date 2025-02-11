@@ -67,6 +67,78 @@ struct node * search(int key){ // should return a node where the key value is fo
     return NULL; // return NULL if key is not found in tree
 }
 
+struct node *RInsert(struct node *p, int key){
+    struct node *t=NULL;
+    if(p==NULL){
+        t=(struct node *)malloc(sizeof(struct node));
+        t->data=key;
+        t->lchild=t->rchild=NULL;
+        return t;
+    }
+    
+    if(key<p->data){
+        p->lchild=RInsert(p->lchild,key);
+    }else if(key>p->data){
+        p->rchild=RInsert(p->rchild,key);
+    }
+    return p;
+}
+
+int height(struct node *p){
+    int x,y;
+    if(p==NULL){
+        return 0;
+    }
+    x=height(p->lchild);
+    y=height(p->rchild);
+    return x>y?x+1:y+1;
+}
+
+struct node *InPre(struct node *p){
+    while(p && p->rchild!=NULL){
+        p=p->rchild;
+    }
+    return p;
+}
+
+struct node *InSucc(struct node *p){
+    while(p && p->lchild!=NULL){
+        p=p->lchild;
+    }
+    return p;
+}
+
+struct node *delete_key(struct node *p, int key){
+    struct node *q;
+    
+    if(p==NULL){
+        return NULL;
+    }
+    if(p->lchild==NULL && p->rchild==NULL){
+        if(p==root)
+            root==NULL;
+        free(p);
+        return NULL;
+    }
+    
+    if(key<p->data){
+        p->lchild=delete_key(p->lchild,key);
+    }else if(key>p->data){
+        p->rchild=delete_key(p->rchild,key);
+    }else{
+        if(height(p->lchild)>height(p->rchild)){
+            q=InPre(p->lchild);
+            p->data=q->data;
+            p->lchild=delete_key(p->lchild,q->data);
+        }else{
+            q=InSucc(p->rchild);
+            p->data=q->data;
+            p->rchild=delete_key(p->rchild,q->data);
+        }
+    }
+    return p;
+}
+
 int main()
 {
     struct node *temp; // to take search result as it will return structure pointer
@@ -77,6 +149,8 @@ int main()
     insert(8);
     insert(25);
     
+    delete_key(root,15);
+
     inorder(root);
     printf("\n");
    
@@ -87,5 +161,23 @@ int main()
         printf("Key not found");
     }
     
+    struct node *temp; // to take search result as it will return structure pointer
+    
+    root=RInsert(root,10);
+    RInsert(root,5);
+    RInsert(root,15);
+    RInsert(root,8);
+    RInsert(root,25);
+    
+    inorder(root);
+    printf("\n");
+   
+    temp=search(10);
+    if(temp!=NULL){
+        printf("Key %d is found", temp->data);
+    }else{
+        printf("Key not found");
+    }
+
     return 0;
 }
