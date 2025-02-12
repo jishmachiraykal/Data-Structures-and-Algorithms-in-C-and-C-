@@ -52,3 +52,7 @@
 * If we are deleting any red node and if does not have any children, then simply delete it. If there is any child, then child will take its place
 
 * If a black node is getting deleted and its sibling is red then perform rotation
+
+* If a black node is deleted then it becomes NULL and double black. Check its sibling and if sibling is black and siblings child is red/sibling is red and its children are black perform rotation and if it is black/red respectively change the colour
+
+* Red-black trees are perfect match for 2-3-4 trees
