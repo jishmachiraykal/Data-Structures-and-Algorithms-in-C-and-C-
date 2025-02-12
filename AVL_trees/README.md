@@ -15,3 +15,15 @@
 * If the balance factor is 0,1,2 then it is left left insertion. If it is -1 then left right insertion.
 
 * For rotation, only 3 nodes will be considered. If the insertion is done next to its right or left. From rotated node, the side is considered for first 2 nodes irrespective where exactly it has inserted anywhere after this. The node over which rotation was performed should become 0
+
+* The moment AVL tree becomes imbalanced after inserting a new node, we have to perform rotation and make it balanced. Otherwise balance factor will become 3,4.... 
+
+* AVL tree is perfect binary search tree. Deletion in AVL tree is same as that of deletion in BST
+
+* L1 rotation in deletion is LL rotation itself
+
+* For L0 rotation in deletion we can perform L1 or L-1 rotation
+
+* R1,R-1 and R0 rotations are similar to L1,L-1 and L0 rotation just right rotation will have the mirror images of left
+
+* 

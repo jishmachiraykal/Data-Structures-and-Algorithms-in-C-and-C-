@@ -26,4 +26,4 @@
 
 * Generating BST from pre-order: Using stack this needs to performed. If it left child push the address to stack and if it is right child do not push the address to stack. Time taken is o(n)
 
-* Drawback of BST: height of BST can be as maximum as o(logn) and as min as o(n). There is no control over the height of a BST it all depends on the order of insertion. Order of insertion or height of BST cannot be controlled. This height can be balanced using avial trees(AVL Trees)
+* Drawback of BST: height of BST can be as maximum as o(logn) and as min as o(n). There is no control over the height of a BST it all depends on the order of insertion. Order of insertion or height of BST cannot be controlled. This height can be balanced using AVL trees
