@@ -26,4 +26,10 @@
 
 * R1,R-1 and R0 rotations are similar to L1,L-1 and L0 rotation just right rotation will have the mirror images of left
 
-* 
+* Height analysis of AVL trees: If height is 0 then no.of nodes should be 0 and if height is 1 then no.of nodes should be 1. Otherwise min no.of nodes required for a given height in AVL tree is n(h)=n(h-2)+n(h-1)+1. This formula is similar to Fibonacci series. Fibonacci series is best used in balanced series
+
+* If n nodes are given, then:
+    1. Min height= log2(n+1)
+    2. Max height will be similar to above analysis where height is given. Approximately = 1.44log2(n+2)
+
+* AVL trees height is always in terms of log
