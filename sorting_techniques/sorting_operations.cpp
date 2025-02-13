@@ -43,6 +43,19 @@ void insertionSort(int A[], int n){
     }
 }
 
+void selectionSort(int A[], int n){
+    int i,j,k;
+    
+    for(i=0;i<n;i++){
+        for(k=j=i;j<n;j++){
+            if(A[j]<A[k]){
+                k=j;
+            }
+        }
+        swap(&A[i],&A[k]);
+    }
+}
+
 int main()
 {
     int A[]={2,6,7,3,8,9,1,0,5,4}, n=10;
@@ -63,5 +76,14 @@ int main()
     }
     printf("\n");
 
+    int A[]={2,6,7,3,8,9,21,0,45,35}, n=10;
+    
+    selectionSort(A,n);
+    
+    for(int i=0;i<10;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+    
     return 0;
 }

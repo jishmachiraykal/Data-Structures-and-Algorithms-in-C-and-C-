@@ -22,3 +22,13 @@
 * Insertion sort is adaptive bu nature. Time taken is min is o(1) and max is o(n^2) and swap is same as that of time taken
 
 * Insertion sort will not shift the elements it they are equal. Hence stable
+
+* Only bubble sort and insertion sort is adaptive. Bubble, insertion and  merge sort are stable
+
+* k passes is required in the bubble sort and not in insertion sort. LL is used in sertion sort and not in bubble sort
+
+* Selection sort: Take the first position and find out the lowest element to put in the first position. To find out min, take two pointers and move one pointer and compare those pointers. Bring down the second pointer to where it is min. Swap first element and the min element found during the first pass. This will continue until the list is completely sorted. With 1st pass we get the smallest element in the array. Here we are selecting position and then making the element to come to that position. Hence name selection sort. for n elements no.of comparision is (n-1)n/2 i.e., o(n^2) and no.of swaps is n-1 i.e., o(n). Swapping will be done only once for each pass using different pointers. Intermediate result of selection sort is useful
+
+* Selection sort is neither adaptive not stable
+
+* Quick sort: an element will be in sorted position if all the elements before that element are smaller and all the elements after that element are greater. Then elements are in a sorted position. Quick does not mean this is fastest sort. Elements before or after that element is sorted or not is not sure. But that particular element is in soretd order. Ex: teacher asking the students to stand in a line as per their height and students standing on their own
