@@ -56,6 +56,29 @@ void selectionSort(int A[], int n){
     }
 }
 
+int partition(int A[], int l, int h){
+    int pivot=A[l]; // taking first element as pivot
+    int i=l,j=h;
+    do{
+        do{i++;}while(A[i]<=pivot);
+        do{j--;}while(A[j]>pivot);
+        if(i<j){
+            swap(&A[i],&A[j]);
+        }
+    }while(i<j);
+    swap(&A[l],&A[j]);
+    return j;
+}
+
+void quickSort(int A[], int l, int h){
+    int j;
+    if(l<h){
+        j=partition(A,l,h);
+        quickSort(A,l,j);
+        quickSort(A,j+1,h);
+    }   
+}
+
 int main()
 {
     int A[]={2,6,7,3,8,9,1,0,5,4}, n=10;
@@ -79,6 +102,15 @@ int main()
     int A[]={2,6,7,3,8,9,21,0,45,35}, n=10;
     
     selectionSort(A,n);
+    
+    for(int i=0;i<10;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+    
+    int A[]={2,6,7,3,8,9,1,0,5,4,65355}, n=11; // 65355 is the largest positive integer to compare the infinity value
+    
+    quickSort(A,0,10);
     
     for(int i=0;i<10;i++){
         printf("%d ", A[i]);
