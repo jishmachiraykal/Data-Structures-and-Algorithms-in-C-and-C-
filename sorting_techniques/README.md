@@ -36,3 +36,9 @@
 * The element which has to find its place in quick sort is called pivot. Once after finding the pivot position, perform quick sort on elements on left and right side of pivot recursively. Entire procedure of quick sort is called partitioning procedure
 
 * If the list is already sorted in ascending/descending order then quick sort takes worst case of o(n^2). Time taken by quick sort is o(nlogn). Best case is if partitioning is done only in the middle and best case time o(nlogn) and worst case is partioning happening at either side of n and worst case time is o(n^2). Average time taken is o(nlogn). Randomly selecting some element as pivot is called randomised quick sort
+
+* Merge sort: merging the two sorted arrays and copying it into third array in an sorted order. Time taken is o(m+n). We can also perform merge operation in a single array if they are half sorted(till middle and from middle) by using low, middle and high concept.After merging from one array to another, we have to merge back the elements to original array once they are sorted. If the merge sort is performed on more than 2 lists then we have to compare one element from each list and sort it. This procedure is called m-way merging
+
+* Iterative merge will have passes and not recursive merge. Time take in iterative merge is o(nlogn)
+
+* Recursive merge sort takes o(nlogn) time. There is no worst/best case. This is the average time case. Here merging is done in the post-order. Size of the stack as it uses recursion is n+logn. This algorithm requires extra space

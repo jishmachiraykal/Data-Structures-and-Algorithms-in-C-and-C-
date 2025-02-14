@@ -79,6 +79,58 @@ void quickSort(int A[], int l, int h){
     }   
 }
 
+void merge(int A[], int l, int m, int h){
+    int i=l,j=m+1,k=l;
+    int B[100]; // auxillary array of size 100
+    
+    while(i<=m && j<=h){
+        if(A[i]<A[j]){
+            B[k++]=A[i++];
+        }else{
+            B[k++]=A[j++];
+        }
+    }
+    
+    for(;i<=m;i++){ // here i starts from where it has stopped in the while loop, so it is not initialized
+            B[k++]=A[i]; 
+    }
+    for(;j<=h;j++){ // here j starts from where it has stopped in the while loop, so it is not initialized
+            B[k++]=A[j]; 
+    }
+    
+    for(i=l;i<=h;i++){
+        A[i]=B[i]; // transfering back the elements from B to A array
+    }  
+}
+
+
+void imergeSort(int A[], int n){
+    int i,p,l,m,h;
+    
+    for(p=2;p<=n;p=p*2){ // splitting the array into smaller parts and merging
+        for(i=0;i+p-1<n;i=i+p){
+            l=i;
+            h=i+p-1;
+            m=(l+h)/2;
+            merge(A,l,m,h);
+        }
+    }
+    if(p/2<n){ // checking if there are any more elements remaining
+        merge(A,0,p/2-1,n);
+    }
+}
+
+void rmergeSort(int A[], int l,int h){
+    int m;
+    
+    if(l<h){
+        m=(l+h)/2;
+        rmergeSort(A,l,m); // recursive merge on left hand side
+        rmergeSort(A,m+1,h); // recursive merge on right hand side
+        merge(A,l,m,h); // merge from low to high using mid value
+    }
+}
+
 int main()
 {
     int A[]={2,6,7,3,8,9,1,0,5,4}, n=10;
@@ -111,6 +163,24 @@ int main()
     int A[]={2,6,7,3,8,9,1,0,5,4,65355}, n=11; // 65355 is the largest positive integer to compare the infinity value
     
     quickSort(A,0,10);
+    
+    for(int i=0;i<10;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+    
+    int A[]={2,6,7,3,8,9,1,0,5,4,35}, n=11; // 65355 is the largest positive integer to compare the infinity value
+    
+    imergeSort(A,n);
+    
+    for(int i=0;i<10;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+
+    int A[]={2,6,7,3,8,9,1,0,5,4,35}, n=11; // 65355 is the largest positive integer to compare the infinity value
+    
+    rmergeSort(A,0,n-1);
     
     for(int i=0;i<10;i++){
         printf("%d ", A[i]);
