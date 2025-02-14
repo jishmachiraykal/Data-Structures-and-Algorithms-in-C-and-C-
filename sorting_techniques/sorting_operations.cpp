@@ -155,6 +155,22 @@ void countSort(int A[], int n){
     }
 }
 
+void shellSort(int A[], int n){
+    int i,gap,j,temp;
+    
+    for(gap=n/2;gap>0;gap/=2){ // gap/=2, gap is divided by 2 for every pass
+        for(i=gap;i<n;i++){
+            temp=A[i];
+            j=i-gap;
+            while(j>=0 && A[j]>temp){
+                A[j + gap] = A[j];
+                j = j - gap;
+            }
+            A[j+gap]=temp;
+        }
+    }
+}
+
 int main()
 {
     int A[]={2,6,7,3,8,9,1,0,5,4}, n=10;
@@ -219,6 +235,15 @@ int main()
         printf("%d ", A[i]);
     }
     printf("\n");
+
+    int A[]={2,6,7,3,8,9,1,0,5,4,35}, n=11; // 65355 is the largest positive integer to compare the infinity value
     
+    shellSort(A,n);
+    
+    for(int i=0;i<n;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+
     return 0;
 }
