@@ -131,6 +131,30 @@ void rmergeSort(int A[], int l,int h){
     }
 }
 
+void countSort(int A[], int n){
+    int i,j,max,*c;
+    
+    max=findMax(A,n);
+    c=(int *)malloc(sizeof(int)*(max+1)); // max+1 because array indexing starts from 0
+    for(i=0;i<max+1;i++){
+        c[i]=0; // making the count array elements as zero initially
+    }
+    
+    for(i=0;i<n;i++){
+        c[A[i]]++; // incrementing the index of count array
+    }
+    
+    i=0,j=0;
+    while(j<max+1){ // looping until count array is finished
+        if(c[j]>0){
+            A[i++]=j;
+            c[j]--;
+        }else{
+            j++;
+        }
+    }
+}
+
 int main()
 {
     int A[]={2,6,7,3,8,9,1,0,5,4}, n=10;
@@ -181,6 +205,15 @@ int main()
     int A[]={2,6,7,3,8,9,1,0,5,4,35}, n=11; // 65355 is the largest positive integer to compare the infinity value
     
     rmergeSort(A,0,n-1);
+    
+    for(int i=0;i<10;i++){
+        printf("%d ", A[i]);
+    }
+    printf("\n");
+    
+    int A[]={2,6,7,3,8,9,1,0,5,4,35}, n=11; // 65355 is the largest positive integer to compare the infinity value
+    
+    countSort(A,n);
     
     for(int i=0;i<10;i++){
         printf("%d ", A[i]);
