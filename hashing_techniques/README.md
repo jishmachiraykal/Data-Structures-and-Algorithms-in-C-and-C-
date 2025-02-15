@@ -23,5 +23,12 @@
 
 * Hash functions: Modulus hash function, midsquare hash function and folding hash function. It is recommended that size of hash table must be prime number
 
+* Midsquare: take the key, square the key and get the mid value. Insert the key in the at the index of mid value
+        Ex: 11*11=121
+        store it at the index 2(mid value)
+        If there are 2 middle elements, take those 2 and store it in that index. If that index is not available perform mod
+
+* Folding: partion the key and take 2 elements for example and add all the partition together. Result obtained is the index where the key is stored. If the index is not in the range again add the result and store in that index. If the key is character/string take ASCII value and perform all the operations. Always hash function should give the same result and should avoid collision
+
 
 
