@@ -1,3 +1,6 @@
+#ifndef queue_h
+#define queue_h
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
@@ -54,15 +57,4 @@ int isEmpty(){
     return front==NULL;
 }
 
-int main()
-{
-    enqueue(11);
-    enqueue(12);
-    enqueue(13);
-    display();
-    
-    printf("Deleted node is %d \n", dequeue());
-    display();
-
-    return 0;
-}
+#endif
