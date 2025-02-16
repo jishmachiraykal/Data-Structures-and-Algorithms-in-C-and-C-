@@ -37,4 +37,7 @@
 
 * Min cost spanning tree: cost of all the edges included in the spanning tree must be minimum
 
-* Prim's min cost spanning tree: this algorithm to find Prim's min cost spanning tree. First select a min cost edge, next select the min cost edge but it must be connected to previous edge. Now repeat the same step i.e., select the min cost edge but it should be connected to previous edge. It should be connected because it is a tree. Time taken = (v-1)e= o(n^2). If we are using heap data structute then time taken is v-loge=o(nlogn) 
+* Prim's min cost spanning tree: this algorithm to find Prim's min cost spanning tree. First select a min cost edge, next select the min cost edge but it must be connected to previous edge. Now repeat the same step i.e., select the min cost edge but it should be connected to previous edge. It should be connected because it is a tree. Time taken = (v-1)e= o(n^2). If we are using heap data structute then time taken is v-loge=o(nlogn). Checking lower triangular/upper triangular for lower values is sufficient because it has duplicates since this is a non-directed graph
+
+* For writing a program we need two things: data structure to perform set of operations and instructions
+
